@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen Masters - Order Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+<href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.minhref="https://cdnjs.cloudflare.com/ajax/libs/fon-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>Ramen <span>Masters</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="user-info">
+                    <button class="login-btn" id="loginBtn">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="menu-section">
+                <h2>Our Ramen Selection</h2>
+                <div class="ramen-options">
+                    <div class="ramen-card">
+                        <div class="ramen-img">
+                            <i class="fas fa-bowl-hot"></i>
+                        </div>
+                        <div class="ramen-details">
+                            <h3>Classic Tonkotsu</h3>
+                            <p>Rich pork bone broth with thin noodles,
+chashu pork, and soft-boiled egg.</p>
+                            <div class="price">$12.99</div>
+                            <button class="add-btn" data-name="Classic
+Tonkotsu" data-price="12.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="ramen-card">
+                        <div class="ramen-img">
+                            <i class="fas fa-bowl-hot"></i>
+                        </div>
+                        <div class="ramen-details">
+                            <h3>Spicy Miso Ramen</h3>
+                            <p>Fermented soybean paste broth with chili
+oil, tofu, and bean sprouts.</p>
+                            <div class="price">$13.99</div>
+                            <button class="add-btn" data-name="Spicy Miso
+Ramen" data-price="13.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="ramen-card">
+                        <div class="ramen-img">
+                            <i class="fas fa-bowl-hot"></i>
+                        </div>
+                        <div class="ramen-details">
+                            <h3>Shoyu Chicken</h3>
+                            <p>Soy sauce-based broth with chicken, bamboo
+shoots, and nori seaweed.</p>
+                            <div class="price">$11.99</div>
+                            <button class="add-btn" data-name="Shoyu
+Chicken" data-price="11.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="ramen-card">
+                        <div class="ramen-img">
+                            <i class="fas fa-bowl-hot"></i>
+                        </div>
+                        <div class="ramen-details">
+                            <h3>Vegetable Miso</h3>
+                            <p>Plant-based miso broth with seasonal
+vegetables and tofu.</p>
+                            <div class="price">$10.99</div>
+                            <button class="add-btn" data-name="Vegetable
+Miso" data-price="10.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-ons">
+                    <h3>Add Extra Goodness</h3>
+                    <div class="addons-grid">
+                        <div class="addon-item" data-name="Extra Meat"
+data-price="3.50">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <div>
+                                <div>Extra Meat</div>
+                                <div>$3.50</div>
+                            </div>
+                        </div>
+                        <div class="addon-item" data-name="Extra Egg"
+data-price="1.50">
+                            <i class="fas fa-egg"></i>
+                            <div>
+                                <div>Extra Egg</div>
+                                <div>$1.50</div>
+                            </div>
+                        </div>
+                        <div class="addon-item" data-name="Extra
+Vegetables" data-price="2.00">
+                            <i class="fas fa-carrot"></i>
+                            <div>
+                                <div>Extra Vegetables</div>
+                                <div>$2.00</div>
+                            </div>
+                        </div>
+                        <div class="addon-item" data-name="Extra Noodles"
+data-price="1.00">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <div>Extra Noodles</div>
+                                <div>$1.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-section">
+                <div class="cart-header">
+                    <h2>Your Order</h2>
+                    <span id="item-count">0 items</span>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be added here dynamically -->
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to
+Checkout</button>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-receipt"></i> Recent Orders</h3>
+                <div class="order-list">
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div class="order-id">#RM-00124</div>
+                            <div class="order-status
+status-pending">Pending</div>
+                        </div>
+                        <div class="order-details">Classic Tonkotsu +
+Extra Meat</div>
+                        <div class="order-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                            <button class="btn btn-view">View</button>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div class="order-id">#RM-00123</div>
+                            <div class="order-status
+status-preparing">Preparing</div>
+                        </div>
+                        <div class="order-details">Spicy Miso Ramen +
+Extra Egg</div>
+                        <div class="order-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                            <button class="btn btn-view">View</button>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div class="order-id">#RM-00122</div>
+                            <div class="order-status
+status-ready">Ready</div>
+                        </div>
+                        <div class="order-details">Shoyu Chicken</div>
+                        <div class="order-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                            <button class="btn btn-view">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <h3><i class="fas fa-chart-line"></i> Sales Overview</h3>
+                <div class="order-list">
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>Today's Sales</div>
+                            <div>$1,245.50</div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>This Week</div>
+                            <div>$8,765.25</div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>This Month</div>
+                            <div>$32,456.80</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <h3><i class="fas fa-users"></i> Staff Management</h3>
+                <div class="order-list">
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>John Smith</div>
+                            <div>Manager</div>
+                        </div>
+                        <div
+class="order-details">john@ramenmasters.com</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>Sarah Johnson</div>
+                            <div>Supervisor</div>
+                        </div>
+                        <div
+class="order-details">sarah@ramenmasters.com</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>Mike Chen</div>
+                            <div>Cashier</div>
+                        </div>
+                        <div
+class="order-details">mike@ramenmasters.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-content">
+            <div class="login-header">
+                <h2>Staff Login</h2>
+                <p>Select your role and enter credentials</p>
+            </div>
+            <div class="role-selection">
+                <button class="role-btn"
+data-role="manager">Manager</button>
+                <button class="role-btn"
+data-role="supervisor">Supervisor</button>
+                <button class="role-btn"
+data-role="cashier">Cashier</button>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your
+username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter
+your password">
+            </div>
+            <div class="login-actions">
+                <button class="cancel-btn"
+id="cancelLogin">Cancel</button>
+                <button class="submit-btn"
+id="submitLogin">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Delivery Information</h2>
+                <p>Please provide your details for delivery</p>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="Enter your
+mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" placeholder="Enter
+your full address">
+                </div>
+            </div>
+            <div class="map-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Click to select your location on the map</p>
+                <button class="map-btn">Select Location</button>
+            </div>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="orderSummaryItems">
+                    <!-- Order items will be added here -->
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="summaryTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="confirm-btn" id="confirmOrder">Confirm
+Order</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Ramen Masters brings authentic Japanese ramen to
+your doorstep with the freshest ingredients and traditional recipes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Ramen
+Street, Tokyo District</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i>
+info@ramenmasters.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Opening Hours</h3>
+                    <ul class="hours">
+                        <li><span>Monday - Friday</span> <span>11:00 AM -
+10:00 PM</span></li>
+                        <li><span>Saturday</span> <span>10:00 AM - 11:00
+PM</span></li>
+                        <li><span>Sunday</span> <span>10:00 AM - 9:00
+PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Ramen Masters. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
